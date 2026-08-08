@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { FadeIn } from '@/components/ui/FadeIn';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -14,14 +15,12 @@ export const Contact: React.FC = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+  const { t } = useLanguage();
 
   return (
     <section id="contact" className="py-20">
       <FadeIn>
-        <SectionHeading
-          title="Контакти"
-          subtitle="Відкритий до нових проєктів, співпраці та цікавих пропозицій"
-        />
+        <SectionHeading title={t.contact.title} subtitle={t.contact.subtitle} />
       </FadeIn>
 
       <div className="mx-auto flex max-w-xl flex-col items-center gap-6">
@@ -33,7 +32,7 @@ export const Contact: React.FC = () => {
             onClick={handleCopy}
             className="flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-900/80 px-6 py-3.5 text-sm font-medium text-white shadow-lg backdrop-blur-sm transition-colors hover:border-emerald-500 hover:bg-zinc-900"
           >
-            <span>{copied ? '✓ Скопійовано!' : `📧 ${email}`}</span>
+            <span>{copied ? t.contact.copied : `📧 ${email}`}</span>
           </motion.button>
         </FadeIn>
 

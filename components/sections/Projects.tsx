@@ -5,6 +5,7 @@ import { ProjectCard } from '@/components/ui/ProjectCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { useState } from 'react';
 import { FadeIn } from '../ui/FadeIn';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const Projects: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'fullstack' | 'games'>('all');
@@ -13,11 +14,12 @@ export const Projects: React.FC = () => {
     if (filter === 'all') return true;
     return p.category === filter;
   });
+  const { t } = useLanguage();
 
   return (
     <section id="projects" className="py-16">
       <FadeIn delay={0.1}>
-        <SectionHeading title="Проєкти" subtitle="Вибрані роботи, над якими я працював" />
+        <SectionHeading title={t.projects.title} subtitle={t.projects.subtitle} />
 
         <div className="mb-8 flex justify-center gap-2">
           {(['all', 'fullstack', 'games'] as const).map((cat) => (
@@ -30,7 +32,11 @@ export const Projects: React.FC = () => {
                   : 'bg-zinc-800/60 text-zinc-400 hover:text-white'
               }`}
             >
-              {cat === 'all' ? 'Всі' : cat === 'fullstack' ? 'Fullstack' : 'Ігри'}
+              {cat === 'all'
+                ? t.projects.filterAll
+                : cat === 'fullstack'
+                  ? t.projects.filterFullstack
+                  : t.projects.filterGames}
             </button>
           ))}
         </div>

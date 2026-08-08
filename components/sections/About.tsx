@@ -1,17 +1,17 @@
+'use client';
+
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { FadeIn } from '../ui/FadeIn';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const About: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <FadeIn delay={0.1}>
       <section id="about" className="py-16">
-        <SectionHeading title="Про мене" />
+        <SectionHeading title={t.about.title} />
         <div className="mx-auto max-w-2xl text-center text-zinc-400">
-          <p>
-            Я займаюся веб-розробкою, фокусуючись на створенні якісних, швидких та зручних
-            користувацьких інтерфейсів. Цікавлюся архітектурою проєктів, оптимізацією продуктивності
-            та сучасним веб-стеком.
-          </p>
+          <p>{t.about.description}</p>
         </div>
       </section>
     </FadeIn>

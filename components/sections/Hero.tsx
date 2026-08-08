@@ -4,26 +4,27 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FadeIn } from '@/components/ui/FadeIn';
 import { ScrollArrow } from '@/components/ui/ScrollArrow';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const Hero: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <section className="relative flex min-h-svh flex-col items-center justify-center py-12 text-center">
       <div className="flex max-w-3xl flex-col items-center">
         <FadeIn delay={0.1}>
-          <span className="font-mono text-sm font-semibold text-emerald-400">Привіт, я Макс</span>
+          <span className="font-mono text-sm font-semibold text-emerald-400">
+            {t.hero.greeting}
+          </span>
         </FadeIn>
 
         <FadeIn delay={0.2}>
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
-            Frontend &amp; Fullstack Developer
+            {t.hero.title}
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <p className="mt-6 text-lg text-zinc-400">
-            Розробляю сучасні веб-додатки, месенджери у реальному часі та інтерактивні ігри на стеку
-            React, TypeScript та Next.js.
-          </p>
+          <p className="mt-6 text-lg text-zinc-400">{t.hero.description}</p>
         </FadeIn>
 
         <FadeIn delay={0.4}>
@@ -34,7 +35,7 @@ export const Hero: React.FC = () => {
               href="#projects"
               className="rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-zinc-950 transition-colors hover:bg-emerald-400"
             >
-              Переглянути проєкти
+              {t.hero.viewProjects}
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -42,7 +43,7 @@ export const Hero: React.FC = () => {
               href="#contact"
               className="rounded-lg border border-zinc-700 px-6 py-3 text-sm font-semibold text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
             >
-              Зв'язатися
+              {t.hero.contactMe}
             </motion.a>
           </div>
         </FadeIn>
