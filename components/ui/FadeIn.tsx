@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 interface FadeInProps {
@@ -16,38 +16,19 @@ export const FadeIn: React.FC<FadeInProps> = ({
   direction = 'up',
   className = '',
 }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   const directions = {
-    up: { y: 20, x: 0 },
-    down: { y: -20, x: 0 },
-    left: { x: 20, y: 0 },
-    right: { x: -20, y: 0 },
+    up: { y: 30, x: 0 },
+    down: { y: -30, x: 0 },
+    left: { x: 30, y: 0 },
+    right: { x: -30, y: 0 },
   };
-
-  // До маунту або на мобілці віддаємо звичайний div без прозорості та анімацій
-  if (!isMounted || isMobile) {
-    return <div className={className}>{children}</div>;
-  }
 
   return (
     <motion.div
       initial={{ opacity: 0, ...directions[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5, delay, ease: 'easeOut' }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
       className={className}
     >
       {children}
