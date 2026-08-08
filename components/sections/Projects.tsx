@@ -4,6 +4,7 @@ import { PROJECTS } from '@/constants/projects';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { useState } from 'react';
+import { FadeIn } from '../ui/FadeIn';
 
 export const Projects: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'fullstack' | 'games'>('all');
@@ -15,27 +16,31 @@ export const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="py-16">
-      <SectionHeading title="Проєкти" subtitle="Вибрані роботи, над якими я працював" />
+      <FadeIn delay={0.1}>
+        <SectionHeading title="Проєкти" subtitle="Вибрані роботи, над якими я працював" />
 
-      <div className="mb-8 flex justify-center gap-2">
-        {(['all', 'fullstack', 'games'] as const).map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
-              filter === cat
-                ? 'bg-emerald-500 text-zinc-950'
-                : 'bg-zinc-800/60 text-zinc-400 hover:text-white'
-            }`}
-          >
-            {cat === 'all' ? 'Всі' : cat === 'fullstack' ? 'Fullstack' : 'Ігри'}
-          </button>
-        ))}
-      </div>
+        <div className="mb-8 flex justify-center gap-2">
+          {(['all', 'fullstack', 'games'] as const).map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+                filter === cat
+                  ? 'bg-emerald-500 text-zinc-950'
+                  : 'bg-zinc-800/60 text-zinc-400 hover:text-white'
+              }`}
+            >
+              {cat === 'all' ? 'Всі' : cat === 'fullstack' ? 'Fullstack' : 'Ігри'}
+            </button>
+          ))}
+        </div>
+      </FadeIn>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {filteredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {filteredProjects.map((project, index) => (
+          <FadeIn key={project.id} delay={index * 0.15} className="h-full">
+            <ProjectCard project={project} />
+          </FadeIn>
         ))}
       </div>
     </section>
