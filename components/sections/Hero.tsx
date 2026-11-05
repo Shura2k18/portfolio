@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
         </FadeIn>
 
         <FadeIn delay={0.4}>
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -44,6 +44,16 @@ export const Hero: React.FC = () => {
               className="rounded-lg border border-zinc-700 px-6 py-3 text-sm font-semibold text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
             >
               {t.hero.contactMe}
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-zinc-800 bg-zinc-900/80 px-6 py-3 text-sm font-semibold text-emerald-400 transition-colors hover:border-emerald-500/50 hover:bg-zinc-800"
+            >
+              {t.hero.viewCv}
             </motion.a>
           </div>
         </FadeIn>

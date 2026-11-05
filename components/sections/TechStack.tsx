@@ -14,9 +14,12 @@ export const TechStack: React.FC = () => {
         <SectionHeading title={t.stack.title} subtitle={t.stack.subtitle} />
         <div className="flex flex-wrap justify-center gap-3">
           {TECH_STACK.map((tech) => (
-            <Badge key={tech.name} variant="outline">
-              {tech.name}
-            </Badge>
+            <a key={tech.name} href={tech.url} target="_blank" rel="noopener noreferrer">
+              <Badge variant="outline">
+                {tech.name}
+                <span className="font-mono text-xs text-zinc-600">↗</span>
+              </Badge>
+            </a>
           ))}
         </div>
       </section>

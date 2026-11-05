@@ -19,6 +19,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
         'Розробляю сучасні веб-додатки, месенджери у реальному часі та інтерактивні ігри на стеку React, TypeScript та Next.js.',
       viewProjects: 'Переглянути проєкти',
       contactMe: "Зв'язатися",
+      viewCv: 'Резюме / CV ↗',
     },
     projects: {
       title: 'Проєкти',
@@ -61,6 +62,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
         'Building modern web applications, real-time messengers, and interactive games using React, TypeScript, and Next.js.',
       viewProjects: 'View Projects',
       contactMe: 'Get in Touch',
+      viewCv: 'Resume / CV ↗',
     },
     projects: {
       title: 'Projects',

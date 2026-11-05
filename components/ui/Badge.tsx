@@ -13,5 +13,11 @@ export const Badge: React.FC<BadgeProps> = ({ children, variant = 'default' }) =
     accent: 'bg-blue-500/10 text-blue-400 border border-blue-500/20',
   };
 
-  return <span className={`${baseStyles} ${variants[variant]}`}>{children}</span>;
+  return (
+    <span
+      className={`hover:border-emerald-500/50 hover:bg-zinc-900 hover:!text-emerald-400 ${baseStyles} ${variants[variant]}`}
+    >
+      {children}
+    </span>
+  );
 };

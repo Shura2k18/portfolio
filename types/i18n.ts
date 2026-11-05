@@ -17,6 +17,7 @@ export interface Translations {
     description: string;
     viewProjects: string;
     contactMe: string;
+    viewCv: string;
   };
   projects: {
     title: string;

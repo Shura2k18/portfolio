@@ -11,10 +11,10 @@ export const Header: React.FC = () => {
   const { t } = useLanguage();
 
   const navLinks = [
-    { num: '01', name: t.nav.projects, href: '#projects', desc: t.nav.projectsDesc },
-    { num: '02', name: t.nav.stack, href: '#stack', desc: t.nav.stackDesc },
-    { num: '03', name: t.nav.about, href: '#about', desc: t.nav.aboutDesc },
-    { num: '04', name: t.nav.contact, href: '#contact', desc: t.nav.contactDesc },
+    { num: '01', name: t.nav.projects, href: '/#projects', desc: t.nav.projectsDesc },
+    { num: '02', name: t.nav.stack, href: '/#stack', desc: t.nav.stackDesc },
+    { num: '03', name: t.nav.about, href: '/#about', desc: t.nav.aboutDesc },
+    { num: '04', name: t.nav.contact, href: '/#contact', desc: t.nav.contactDesc },
   ];
 
   const toggleMenu = (e: React.SyntheticEvent) => {
@@ -44,6 +44,14 @@ export const Header: React.FC = () => {
                 </a>
               ))}
             </nav>
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs font-semibold text-zinc-300 transition-colors hover:border-emerald-500/50 hover:text-emerald-400"
+            >
+              CV ↗
+            </a>
             <LangSwitcher />
           </div>
 
@@ -131,9 +139,17 @@ export const Header: React.FC = () => {
             </div>
 
             <div className="relative z-10 space-y-4 border-t border-zinc-900 pt-4">
-              <div className="flex justify-center gap-6 text-sm font-medium text-zinc-400">
+              <div className="flex flex-wrap justify-center gap-5 text-sm font-medium text-zinc-400">
                 <a
-                  href="https://t.me/your_telegram"
+                  href="/cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-emerald-400 hover:text-emerald-300"
+                >
+                  CV (PDF) ↗
+                </a>
+                <a
+                  href="https://t.me/kucheruk_maksym"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-emerald-400 active:text-emerald-400"
@@ -141,7 +157,7 @@ export const Header: React.FC = () => {
                   Telegram
                 </a>
                 <a
-                  href="https://linkedin.com/in/your_linkedin"
+                  href="https://www.linkedin.com/in/maksym-kucheruk-190711331/"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-emerald-400 active:text-emerald-400"
@@ -149,7 +165,7 @@ export const Header: React.FC = () => {
                   LinkedIn
                 </a>
                 <a
-                  href="https://github.com/your_github"
+                  href="https://github.com/Shura2k18"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-emerald-400 active:text-emerald-400"

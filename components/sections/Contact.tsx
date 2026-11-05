@@ -30,7 +30,7 @@ export const Contact: React.FC = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={handleCopy}
-            className="flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-900/80 px-6 py-3.5 text-sm font-medium text-white shadow-lg backdrop-blur-sm transition-colors hover:border-emerald-500 hover:bg-zinc-900"
+            className="flex cursor-pointer items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-900/80 px-6 py-3.5 text-sm font-medium text-white shadow-lg backdrop-blur-sm transition-colors hover:border-emerald-500 hover:bg-zinc-900"
           >
             <span>{copied ? t.contact.copied : `📧 ${email}`}</span>
           </motion.button>
@@ -56,7 +56,7 @@ export const Contact: React.FC = () => {
               href="https://www.linkedin.com/in/maksym-kucheruk-190711331/"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-blue-500/50 hover:text-blue-400"
+              className="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-emerald-500/50 hover:text-emerald-400"
             >
               LinkedIn
             </motion.a>
@@ -67,7 +67,7 @@ export const Contact: React.FC = () => {
               href="https://github.com/Shura2k18"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-600 hover:text-white"
+              className="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-emerald-500/50 hover:text-emerald-400"
             >
               GitHub
             </motion.a>

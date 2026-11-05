@@ -10,7 +10,7 @@ export const LangSwitcher: React.FC = () => {
     <div className="flex items-center gap-1 rounded-lg border border-zinc-800 bg-zinc-900/80 p-1 font-mono text-xs">
       <button
         onClick={() => setLang('ua')}
-        className={`rounded px-2 py-1 transition-colors ${
+        className={`cursor-pointer rounded px-2 py-1 transition-colors ${
           lang === 'ua'
             ? 'bg-emerald-500 font-bold text-zinc-950'
             : 'text-zinc-400 hover:text-white'
@@ -20,7 +20,7 @@ export const LangSwitcher: React.FC = () => {
       </button>
       <button
         onClick={() => setLang('en')}
-        className={`rounded px-2 py-1 transition-colors ${
+        className={`cursor-pointer rounded px-2 py-1 transition-colors ${
           lang === 'en'
             ? 'bg-emerald-500 font-bold text-zinc-950'
             : 'text-zinc-400 hover:text-white'
